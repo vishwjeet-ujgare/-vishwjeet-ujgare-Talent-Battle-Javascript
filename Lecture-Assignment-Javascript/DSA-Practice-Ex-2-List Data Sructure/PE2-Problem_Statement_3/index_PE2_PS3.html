@@ -46,15 +46,17 @@
 
 
         <div class="inputDiv">
-          <form action="">
+
+          <!-- form -->
+          <form action="abc.php" onsubmit="return Add()" name="inputForm" id="inputForm" method="post">
             <div class="row">
-             <b>Add Atleast 5 person to sort there data gender wise</b>
+              <b>Add Atleast 5 person to sort there data gender wise</b>
             </div>
 
             <div class="row">
-              <label for="name">Enter/select name</label>
+              <label for="name">Enter/select first name only</label>
 
-              <input list="names" name="name" id="name">
+              <input list="names" name="name" id="name" required>
               <datalist id="names">
                 <option value="Amey">
                 <option value="Vishwjeet">
@@ -75,12 +77,12 @@
               <label for="gender">Gender</label>
 
               <div class="inner-div">
-                <input type="radio" id="male" name="gender">
+                <input type="radio" id="Male" value="Male" name="gender" required>
                 <label for="male">M</label>
               </div>
 
               <div class="inner-div">
-                <input type="radio" id="female" name="gender">
+                <input type="radio" id="Female" value="Female" name="gender" required>
                 <label for="female">F</label>
               </div>
             </div>
@@ -91,7 +93,7 @@
             </div>
 
             <div class="row btn-div">
-              <input type="button" value="Sort By Gender">
+              <input type="button" value="Sort By Gender" onclick="sort()">
             </div>
           </form>
         </div>
@@ -99,34 +101,36 @@
 
         <div class="selectedValueDiv">
           <b>Selected People :</b>
-          <ol id="selectedStudentList">
+          <ol id="selectedPersonList">
             <!-- <li>vishwjeet ramesh ujgare</li>
             <li>vishwjeet ramesh ujgare</li> -->
-       
+
           </ol>
         </div>
       </div>
     </div>
 
     <div class="tbl-div">
-      <table id="sortTbl">
+      <table>
+        <thead>
+          <tr>
+            <th>Gender</th>
+            <th>sr.no</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody id="sortTbl">
+          <!-- <tr>
+            <td rowspan="2">M</td>
+            <td>1</td>
+            <td>jeet</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>vishwjeet</td>
+          </tr> 
+        
         <tr>
-          <th>Gender</th>
-          <th>sr.no</th>
-          <th>Name</th>
-        </tr>
-        <!--  <tr>
-         <td rowspan="2">M</td>
-          <td>1</td>
-          <td>jeet</td>
-        </tr>
-
-        <tr>
-          <td>2</td>
-          <td>vishwjeet</td>
-        </tr> -->
-
-        <!-- <tr>
           <td rowspan="2">F</td>
           <td>3</td>
           <td>sanju</td>
@@ -145,7 +149,9 @@
           <td>6</td>
           <td>xyz</td> 
         </tr>
--->
+      -->
+
+        </tbody>
 
         <table>
     </div>
